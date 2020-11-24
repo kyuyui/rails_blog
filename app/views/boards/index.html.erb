@@ -1,0 +1,14 @@
+<h1>新增看板</h1>
+<%= link_to "新增看板", new_board_path %>
+
+<ul>
+    <% @boards.each do |board| %>
+    <li>
+        <%= link_to "編輯", edit_board_path(board) %>
+        <%= link_to "刪除", method: 'delete', data: { confirm: '是否確定刪除？' } %>
+
+        <%= link_to board.title, board %>
+        <!-- 連結回到 -->
+    </li>
+    <% end %>
+</ul>
