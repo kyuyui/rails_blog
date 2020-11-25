@@ -8,6 +8,8 @@ class BoardsController < ApplicationController
     end
 
     def create
+        #p params["board"]
+        #board_params=params["board"]->{ "title" => '欄位名稱' }
         @board = Board.new(board_params)
 
         if @board.save
@@ -18,7 +20,11 @@ class BoardsController < ApplicationController
     end
 
     def show
+        begin
         @board = Board.find_by(id: params[:id])
+        rescue
+        redirect_to root_path, notice: 'no found'
+        end
     end
 
     def edit

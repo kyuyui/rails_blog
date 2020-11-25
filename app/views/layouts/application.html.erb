@@ -10,6 +10,10 @@
   </head>
 
   <body>
-    <%= yield %>
+    <%= render "shared/navbar" %>
+    <%= render "shared/flash" if notice %>
+    <section class="main-section">
+      <%= yield %>
+    </section>
   </body>
 </html>
