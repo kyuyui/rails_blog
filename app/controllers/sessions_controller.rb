@@ -16,6 +16,7 @@ class SessionsController < ApplicationController
 
     def destroy
       session[:user1213] = nil
+      #讓這張票變成空的
       redirect_to root_path, notice: '已登出'
     end
 end
