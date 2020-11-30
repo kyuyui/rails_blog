@@ -1,5 +1,5 @@
 nav {
-    background-color: #f0f0f0;
+    background-color: #fa0;
     font-size: 20px;
     padding: 10px;
     display: flex;
@@ -10,6 +10,7 @@ ul {
 
     li {
         margin-left: 0 10px;
+        list-style: none;
 
       a {
         text-decoration: none; 

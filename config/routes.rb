@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'boards#index'
 
   resource :user, controller: 'registrations', only: [:creat]
+
   get '/users/sign_up', to: 'registrations#new', as: 'registration'
   #註冊
   post '/users/sign_up', to: 'registrations#create' 
@@ -10,7 +11,8 @@ Rails.application.routes.draw do
   get '/users/sign_in', to: 'sessions#new', as: 'session'
   #登入
   post '/login', to: 'sessions#create', as: 'login'
-	delete '/users/sign_out', to: 'sessions#destroy', as: 'logout'
+
+	delete '/logout', to: 'sessions#destroy', as: 'logout'
   #登出
   
   get "/users/edit", to: "registrarion#edit", as: 'edit_registration'
