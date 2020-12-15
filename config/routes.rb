@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
   root 'boards#index'
 
-  resource :user, controller: 'registrations', only: [:creat]
+  resource :user, controller: 'registrations', only: [:creat, :edit, :update]do
+    get '/sign_up', action: 'new'
+  end
 
-  get '/users/sign_up', to: 'registrations#new', as: 'registration'
+  #get '/users/sign_up', to: 'registrations#new', as: 'registration'
   #註冊
+  
   post '/users/sign_up', to: 'registrations#create' 
 	#建立資料
 
