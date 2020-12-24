@@ -23,5 +23,8 @@ Rails.application.routes.draw do
 	delete '/logout', to: 'sessions#destroy', as: 'logout'
   #登出
 
-  resources :boards
+  resources :boards do 
+    resources :post, shallow: true
+  end
+
 end
