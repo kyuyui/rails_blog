@@ -269,7 +269,7 @@ DEPENDENCIES
   byebug
   capybara (>= 2.15)
   carrierwave (~> 2.0)
-  figaro (~> 1.2)
+  figaro
   fog-aws
   jbuilder (~> 2.7)
   listen (~> 3.2)
