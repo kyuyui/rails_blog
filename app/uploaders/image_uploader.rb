@@ -5,7 +5,7 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   # Choose what kind of storage to use for this uploader:
   #storage :file
-  if Rails.env.production?
+  if true
     storage :fog #Heroku, Use Amazon S3
   else
     storage :file
