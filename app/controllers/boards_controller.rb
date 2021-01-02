@@ -12,7 +12,6 @@ class BoardsController < ApplicationController
         #p params["board"]
         #board_params=params["board"]->{ "title" => '欄位名稱' }
         @board = Board.new(board_params)
-
         if @board.save
             redirect_to "/", notice: '成功新增看板'
         else 
