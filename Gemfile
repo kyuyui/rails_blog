@@ -25,7 +25,7 @@ gem 'jbuilder', '~> 2.7'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
-gem 'carrierwave', '~> 2.0'
+gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 gem 'figaro'
 gem "fog-aws"
 gem "mini_magick"

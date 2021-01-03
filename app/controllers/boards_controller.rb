@@ -55,6 +55,6 @@ class BoardsController < ApplicationController
 
         # puts "params.require(:board): #{params.require(:board)}"
         # puts "params[:board]: #{params[:board]}"
-        params.require(:board).permit(:title, :image)
+        params.require(:board).permit(:title, {images:[]})
     end
 end

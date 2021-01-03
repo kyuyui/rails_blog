@@ -2,9 +2,18 @@
     <%= f.label :title, '看版標題' %>
     <%= f.text_field :title %>
     <br/>
-    <%= f.label :image %>
-    <%= f.file_field :image, id: :board_image, class: "form-control" %>
+    <%= f.label :images %>
+    <%= f.file_field :images, multiple:true, :class => "form-control" %>
     <br/>
+    <% if f.object.images.present? %>
+    <label>
+        <%= f.check_box :remove_images %> 刪除圖片
+    </label>
+    <% f.object.images.each do |i| %>
+    <%= link_to i.filename, i.url, :target => "_blank" %>
+    <% end %>
+    <% end %>
+
     <%= f.submit %>
 <% end %>
 
