@@ -1,6 +1,6 @@
 <h1>註冊會員</h1>
 
-<%= form_for(@user, url: users_sign_up_path) do |form| %>
+<%= form_for(@user) do |form| %>
 <div class="fields">
     <%= form.label :email %>
     <%= form.text_field :email %>

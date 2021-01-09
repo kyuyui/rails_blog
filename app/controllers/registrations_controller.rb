@@ -1,5 +1,5 @@
 class RegistrationsController < ApplicationController
-
+  before_action :session_required, only: [:edit, :update]
   def new
     @user = User.new
   end
@@ -11,6 +11,17 @@ class RegistrationsController < ApplicationController
       redirect_to root_path, notice: 'ok!'
     else
       render :new
+    end
+  end
+
+  def edit
+  end
+
+  def update
+    if current_users.update(user_params)
+      redirect_to edit_users_path, notice: '資料更新成功'
+    else 
+      #
     end
   end
 

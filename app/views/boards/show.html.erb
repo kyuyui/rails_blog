@@ -1,5 +1,5 @@
 <h1><%= @board.title %></h1>
-<!-- 秀出輸入欄位的名字 -->
+<%= link_to"新增文章", new_board_post_path(@board) %>
 <% @board.images.each do |image| %>
     <%= image_tag(image.thumb.url) %>
 <% end %>

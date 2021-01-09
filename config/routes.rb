@@ -14,16 +14,11 @@ Rails.application.routes.draw do
   resource :users, controller: 'sessions', only: [] do
     get '/sign_in', action: 'new'
     post '/sign_in', action: 'create'
+    delete '/sign_out', action: 'destroy'
   end
 
-  get '/users/sign_in', to: 'sessions#new', as: 'session'
-  #登入
-  post '/login', to: 'sessions#create', as: 'login'
-	delete '/logout', to: 'sessions#destroy', as: 'logout'
-  #登出
-
   resources :boards do 
-    resources :post, shallow: true
+    resources :posts, shallow: true
   end
 
 end
